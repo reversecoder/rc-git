@@ -1,0 +1,58 @@
+Basic Configuration
+
+* Configure repository
+
+    Add reversecoder repos to your <<<pom.xml>>> where <<<rc-git>>> is usually released. 
+
++--
+...
+<pluginRepositories>
+  <pluginRepository>
+    <id>reversecoder-repo</id>
+    <url>https://raw.github.com/reversecoder/rc-git/releases</url>
+  </pluginRepository>
+...
+</pluginRepositories>
+...
++--
+
+* Extensions section
+
+    Add the following extension to your <<<build>>> tag:
+
++--
+...
+<build>
+...
+  <extensions>
+    <extension>
+      <groupId>ar.com.synergian</groupId>
+      <artifactId>rc-git</artifactId>
+      <version>${project.version}</version>
+    </extension>
+  </extensions>
+...
+</build>
++--
+
+* URL parts
+
+    In the following configuration you'll URLs as the one in this example:
+
++--
+<url>git:releases://git@github.com:reversecoder/rc-git.git</url>
++--
+
+     * <<"git">> is the extension enabled by this plugin.
+     
+     * <<"releases">> is the name of the <<branch>> in the target repository to use.
+     
+     * <<"git@github.com:reversecoder">> git standard domain plus username.
+     
+     * <<"rc-git.git">> the target repository. 
+
+* Next steps
+
+    You've already included the plugin as part of your project, now proceed to {{{./github.html}Github}} or {{{./bitbucket.html}Bitbucket}} configurations.
+    
+    Notice that, although out of the scope of this guide, you could use this plugin with any Git repository as long as it gets published through HTTP or HTTPS access and honors the repository layout.  

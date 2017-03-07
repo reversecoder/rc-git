@@ -1,0 +1,25 @@
+rc-git
+
+    A Maven component (a rc) that enables deploying artifacts in remote Git SCM repositories.
+    
+    <<rc-git>> Requires <<{{{http://git-scm.com/}git}}>> already installed and available in the environment PATH variable.
+    
+Features
+
+    * Enables to configure different Git repositories for releases, snapshots and site.
+    
+    * Enables to configure different Git branches for releases, snapshots and site.
+    
+    * Enables to use regular <<{{{http://github.com}Github}}>> Git repositories as Maven repositories (<<public or private>>).
+    
+    * Enables to use regular <<{{{http://bitbucket.org}Bitbucket}}>> Git repositories as Maven repositories (<<public or private>>).
+    
+    * Can create "orphan" branches, without parent branch (useful for {{{http://pages.github.com/}GitHub Pages}} <<<gh-pages>>> branches).
+    
+
+=====================
+    
+Disclaimer
+	
+	<<rc-git>> is a general purpose git rc, not only for Bitbucket or Github. Please read {{{https://www.atlassian.com/hosted/terms.jsp}Bitbucket's Hosting Terms of Use}} and {{{https://help.github.com/articles/github-terms-of-service}Github's Terms of Service}} before deploying anything there.       
+    
