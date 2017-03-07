@@ -4,15 +4,13 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.reversecoder.git</groupId>
     <artifactId>rc-git</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.0-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>rc-git</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-
-    <url>git:releases://git@github.com:reversecoder/rc-git.git</url>
 
     <prerequisites>
         <maven>3.2</maven>
@@ -78,6 +76,13 @@
             <plugin>
                 <artifactId>maven-jar-plugin</artifactId>
                 <version>2.5</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
             </plugin>
             <plugin>
                 <artifactId>maven-dependency-plugin</artifactId>
@@ -141,26 +146,31 @@
     </build>
 
     <scm>
-        <url>https://github.com/reversecoder/rc-git</url>
-        <connection>scm:git:ssh://git@github.com/reversecoder/rc-git.git</connection>
+        <url>https://github.com/reversecoder/rc-git/</url>
+        <connection>scm:git:https://github.com/reversecoder/rc-git.git</connection>
+		<developerConnection>scm:git:ssh://git@github.com/reversecoder/rc-git.git</developerConnection>
         <tag>${project.artifactId}-${project.version}</tag>
     </scm>
 
+    <!-- <url>git:releases://git@github.com:reversecoder/rc-git.git</url> -->
+	<url>git:snapshots://git@github.com:reversecoder/rc-git.git</url>
+	<!-- <url>git:gh-pages://git@github.com:reversecoder/rc-git.git</url> -->
+
     <distributionManagement>
         <repository>
-            <id>rc-git-releases</id>
-            <name>rc-git Releases</name>
-            <url>git:releases://git@github.com/reversecoder/rc-git.git</url>
+            <id>releases</id>
+            <name>releases</name>
+            <url>git:releases://git@github.com:reversecoder/rc-git.git</url>
         </repository>
         <snapshotRepository>
-            <id>rc-git-snapshots</id>
-            <name>rc-git Snapshots</name>
-            <url>git:snapshots:git@github.com/reversecoder/rc-git.git</url>
+            <id>snapshots</id>
+            <name>snapshots</name>
+            <url>git:snapshots://git@github.com:reversecoder/rc-git.git</url>
         </snapshotRepository>
         <site>
-            <id>rc-git-site</id>
-            <name>rc-git Homepage</name>
-            <url>git:gh-pages:git@github.com/reversecoder/rc-git.git</url>
+            <id>gh-pages</id>
+            <name>gh-pages</name>
+            <url>git:gh-pages://git@github.com:reversecoder/rc-git.git</url>
         </site>
     </distributionManagement>
 </project>
