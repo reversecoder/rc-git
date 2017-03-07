@@ -152,9 +152,9 @@
         <tag>${project.artifactId}-${project.version}</tag>
     </scm>
 
-    <url>git:releases://git@github.com:reversecoder/rc-git.git</url>
+    <!-- <url>git:releases://git@github.com:reversecoder/rc-git.git</url> -->
 	<!-- <url>git:snapshots://git@github.com:reversecoder/rc-git.git</url> -->
-	<!-- <url>git:gh-pages://git@github.com:reversecoder/rc-git.git</url> -->
+	<url>git:gh-pages://git@github.com:reversecoder/rc-git.git</url>
 
     <distributionManagement>
         <repository>
