@@ -62,9 +62,6 @@ public class LazyFileOutputStream extends OutputStream {
         delegee.write(b);
     }
 
-    /**
-     * @see java.io.OutputStream#write(byte[], int, int)
-     */
     public void write(byte[] b, int off, int len) throws IOException {
         if (delegee == null) {
             initialize();
@@ -73,10 +70,6 @@ public class LazyFileOutputStream extends OutputStream {
         delegee.write(b, off, len);
     }
 
-    /**
-     * @param b
-     * @throws java.io.IOException
-     */
     public void write(int b) throws IOException {
         if (delegee == null) {
             initialize();
@@ -85,9 +78,6 @@ public class LazyFileOutputStream extends OutputStream {
         delegee.write(b);
     }
 
-    /**
-     * 
-     */
     private void initialize() throws FileNotFoundException {
         delegee = new FileOutputStream(file);
     }

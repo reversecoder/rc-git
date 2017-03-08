@@ -15,10 +15,6 @@ public class ChecksumObserver implements TransferListener {
         this("MD5");
     }
 
-    /**
-     * @param algorithm
-     *            One of the algorithms supported by JDK: MD5, MD2 or SHA-1
-     */
     public ChecksumObserver(String algorithm) throws NoSuchAlgorithmException {
         digester = MessageDigest.getInstance(algorithm);
     }
@@ -61,7 +57,7 @@ public class ChecksumObserver implements TransferListener {
     /**
      * Returns md5 checksum which was computed during transfer
      *
-     * @return
+     * @return Returns md5 checksum string.
      */
     public String getActualChecksum() {
         return actualChecksum;

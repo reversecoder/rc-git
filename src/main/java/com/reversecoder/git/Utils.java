@@ -35,6 +35,10 @@ public final class Utils {
      * Normally a hash, but if unavailable, the URL encoding of the URL. We do
      * this in order to support multiple repos corresponding to different
      * remotes.
+     *
+     * @param path The string path.
+     * @return Returns the path.
+     * @throws GitException The git exception.
      */
     private static String hashPath(String path) throws GitException {
         try {

@@ -11,6 +11,7 @@ public final class PathUtils {
      * Returns the directory path portion of a file specification string.
      * Matches the equally named unix command.
      *
+     * @param path The string path.
      * @return The directory portion excluding the ending file separator.
      */
     public static String dirname(final String path) {
@@ -22,6 +23,7 @@ public final class PathUtils {
     /**
      * Returns the filename portion of a file specification string.
      *
+     * @param path The string path.
      * @return The filename string with extension.
      */
     public static String filename(final String path) {
@@ -110,6 +112,8 @@ public final class PathUtils {
     /**
      * This was changed from private to package local so that it can be unit
      * tested.
+     * @param url the url
+     * @return the authorized host name
      */
     static String authorization(final String url) {
         if (url == null) {
@@ -159,7 +163,7 @@ public final class PathUtils {
     }
 
     /**
-     * /** Return the protocol name. <br/>
+     * /** Return the protocol name.
      * E.g: for input <code>http://www.codehause.org</code> this method will
      * return <code>http</code>
      *
@@ -177,7 +181,7 @@ public final class PathUtils {
     }
 
     /**
-     * @param url
+     * @param url the url
      * @return the port or {@link GitApiConstants#UNKNOWN_PORT} if not existent
      */
     public static int port(String url) {
@@ -237,7 +241,7 @@ public final class PathUtils {
      * @param url
      *            the repository URL
      * @return the basedir of the repository
-     * @todo need to URL decode for spaces?
+     * TODO: need to URL decode for spaces?
      */
     public static String basedir(String url) {
         String protocol = PathUtils.protocol(url);

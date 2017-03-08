@@ -34,11 +34,11 @@ public interface GitApi {
     /**
      * Downloads specified resource from the repository to given file.
      *
-     * @param resourceName
-     * @param destination
-     * @throws TransferFailedException
-     * @throws ResourceDoesNotExistException
-     * @throws AuthorizationException
+     * @param resourceName The resource name.
+     * @param destination The destination.
+     * @throws TransferFailedException Throws Transfer failed exception.
+     * @throws ResourceDoesNotExistException Throws resource does not exist exception.
+     * @throws AuthorizationException Throws authorization Exception.
      */
     void get(String resourceName, File destination)
             throws TransferFailedException, ResourceDoesNotExistException, AuthorizationException;
@@ -48,15 +48,15 @@ public interface GitApi {
      * specified date. The date is measured in milliseconds, between the current
      * time and midnight, January 1, 1970 UTC and aligned to GMT timezone.
      *
-     * @param resourceName
-     * @param destination
-     * @param timestamp
+     * @param resourceName The resource name.
+     * @param destination The destination.
+     * @param timestamp The time stamp.
      * @return <code>true</code> if newer resource has been downloaded,
      *         <code>false</code> if resource in the repository is older or has
      *         the same age.
-     * @throws TransferFailedException
-     * @throws ResourceDoesNotExistException
-     * @throws AuthorizationException
+     * @throws TransferFailedException Throws Transfer failed exception.
+     * @throws ResourceDoesNotExistException Throws resource does not exist exception.
+     * @throws AuthorizationException Throws authorization Exception.
      */
     boolean getIfNewer(String resourceName, File destination, long timestamp)
             throws TransferFailedException, ResourceDoesNotExistException, AuthorizationException;
@@ -68,9 +68,9 @@ public interface GitApi {
      *            the local file
      * @param destination
      *            the remote destination
-     * @throws TransferFailedException
-     * @throws ResourceDoesNotExistException
-     * @throws AuthorizationException
+     * @throws TransferFailedException Throws Transfer failed exception.
+     * @throws ResourceDoesNotExistException Throws resource does not exist exception.
+     * @throws AuthorizationException Throws authorization Exception.
      */
     void put(File source, String destination)
             throws TransferFailedException, ResourceDoesNotExistException, AuthorizationException;
@@ -82,9 +82,9 @@ public interface GitApi {
      *            the local directory
      * @param destinationDirectory
      *            the remote destination
-     * @throws TransferFailedException
-     * @throws ResourceDoesNotExistException
-     * @throws AuthorizationException
+     * @throws TransferFailedException Throws Transfer failed exception.
+     * @throws ResourceDoesNotExistException Throws resource does not exist exception.
+     * @throws AuthorizationException Throws authorization Exception.
      */
     void putDirectory(File sourceDirectory, String destinationDirectory)
             throws TransferFailedException, ResourceDoesNotExistException, AuthorizationException;
@@ -92,7 +92,7 @@ public interface GitApi {
     /**
      * Check if a remote resource exists
      *
-     * @param resourceName
+     * @param resourceName The resource name.
      * @return whether the resource exists or not
      * @throws TransferFailedException
      *             if there's an error trying to access the remote side
@@ -103,11 +103,11 @@ public interface GitApi {
             throws TransferFailedException, AuthorizationException;
 
     /**
-     * <p/>
+     * <p>
      * Returns a {@link List} of strings naming the files and directories in the
      * directory denoted by this abstract pathname.
      * </p>
-     * <p/>
+     * <p>
      * If this abstract pathname does not denote a directory, or does not exist,
      * then this method throws {@link ResourceDoesNotExistException}. Otherwise
      * a {@link List} of strings is returned, one for each file or directory in
@@ -115,7 +115,7 @@ public interface GitApi {
      * parent directory are not included in the result. Each string is a file
      * name rather than a complete path.
      * </p>
-     * <p/>
+     * <p>
      * There is no guarantee that the name strings in the resulting list will
      * appear in any specific order; they are not, in particular, guaranteed to
      * appear in alphabetical order.
@@ -166,6 +166,7 @@ public interface GitApi {
      *
      * @param source
      *            the repository to connect to
+     * @param proxyInfo The proxy info.
      * @throws ConnectionException
      *             if there is a problem connecting
      * @throws com.reversecoder.git.api.authentication.AuthenticationException
@@ -248,7 +249,7 @@ public interface GitApi {
      *             if there is a problem connecting
      * @throws com.reversecoder.git.api.authentication.AuthenticationException
      *             if ther credentials for connecting are not sufficient
-     * @todo delegate this to a truly internal connection method
+     * TODO: delegate this to a truly internal connection method
      * @deprecated connect using the
      *             {@link #connect(com.reversecoder.git.api.repository.Repository)}
      *             or related methods - this is an internal method
@@ -265,17 +266,22 @@ public interface GitApi {
 
     /**
      * Set the connection timeout limit in milliseconds
+     *
+     * @param timeoutValue The time out value.
      */
     void setTimeout(int timeoutValue);
 
     /**
      * Get the connection timeout limit in milliseconds
+     *
+     * @return Returns the time out value.
      */
     int getTimeout();
 
     /**
      * Set the read timeout limit in milliseconds
      * 
+     * @param timeoutValue The time out value.
      * @since 2.2
      */
     void setReadTimeout(int timeoutValue);
@@ -283,6 +289,7 @@ public interface GitApi {
     /**
      * Get the read timeout limit in milliseconds
      * 
+     * @return Returns the read time out value.
      * @since 2.2
      */
     int getReadTimeout();

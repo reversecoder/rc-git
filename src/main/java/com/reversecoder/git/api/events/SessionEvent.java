@@ -60,7 +60,7 @@ public class SessionEvent extends GitApiEvent {
      * Creates new instance of SessionEvent
      *
      * @param gitApi
-     *            <code>GitApi<code> object which created this event
+     *            <code>GitApi</code> object which created this event
      * @param eventType
      *            the type of the event
      */
@@ -75,7 +75,7 @@ public class SessionEvent extends GitApiEvent {
      * <code>SESSION_ERROR_OCCURRED</code>
      *
      * @param gitApi
-     *            <code>GitApi<code> object which created this event
+     *            <code>GitApi</code> object which created this event
      * @param exception
      *            the exception
      */

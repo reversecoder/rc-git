@@ -335,9 +335,9 @@ public abstract class AbstractGitApi implements GitApi {
      *            output stream
      * @param closeOutput
      *            whether the output stream should be closed or not
-     * @throws TransferFailedException
-     * @throws ResourceDoesNotExistException
-     * @throws AuthorizationException
+     * @throws TransferFailedException Throws transfer failed exception.
+     * @throws ResourceDoesNotExistException Throws resource does not exist exception.
+     * @throws AuthorizationException Throws authorization exception.
      * @since 1.0-beta-1
      */
     protected void transfer(Resource resource, File source, OutputStream output,
@@ -416,7 +416,7 @@ public abstract class AbstractGitApi implements GitApi {
      * @param requestType
      *            one of {@link TransferEvent#REQUEST_GET} or
      *            {@link TransferEvent#REQUEST_PUT}
-     * @throws IOException
+     * @throws IOException Throws IO exception.
      */
     protected void transfer(Resource resource, InputStream input, OutputStream output,
             int requestType) throws IOException {
@@ -439,7 +439,7 @@ public abstract class AbstractGitApi implements GitApi {
      *            {@link TransferEvent#REQUEST_PUT}
      * @param maxSize
      *            size of the buffer
-     * @throws IOException
+     * @throws IOException Throws IO exception.
      * @deprecated Please use the transfer using long as type of maxSize
      */
     @Deprecated
@@ -464,7 +464,7 @@ public abstract class AbstractGitApi implements GitApi {
      *            {@link TransferEvent#REQUEST_PUT}
      * @param maxSize
      *            size of the buffer
-     * @throws IOException
+     * @throws IOException Throws IO exception.
      */
     protected void transfer(Resource resource, InputStream input, OutputStream output,
             int requestType, long maxSize) throws IOException {
@@ -716,6 +716,11 @@ public abstract class AbstractGitApi implements GitApi {
     /**
      * This method is used if you are not streaming the transfer, to make sure
      * any listeners dependent on state (eg checksum observers) succeed.
+     *
+     * @param resource the resource.
+     * @param source the source.
+     * @param requestType the request type.
+     * @throws TransferFailedException throws transfer failed exception.
      */
     protected void postProcessListeners(Resource resource, File source, int requestType)
             throws TransferFailedException {

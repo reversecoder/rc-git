@@ -4,6 +4,7 @@ public interface ProxyInfoProvider {
     /**
      * Returns the proxy settings for the given protocol.
      * 
+     * @param protocol The protocol.
      * @return Proxy settings or null, if no proxy is configured for this
      *         protocol.
      */

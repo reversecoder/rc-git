@@ -12,7 +12,7 @@ public final class TransferEventSupport {
 
     /**
      * Adds the listener to the collection of listeners who will be notified
-     * when any transfer event occurs in this <code>GitApi</code> object. <br/>
+     * when any transfer event occurs in this <code>GitApi</code> object.
      * If listener is <code>null</code>, no exception is thrown and no action is
      * performed
      *
@@ -29,7 +29,7 @@ public final class TransferEventSupport {
 
     /**
      * Removes the transfer listener from the collection of listeners so it no
-     * longer receives transfer events. <br/>
+     * longer receives transfer events.
      * If listener is <code>null</code> or specified listener was not added to
      * this <code>TransferEventSupport</code> object no exception is thrown and
      * no action is performed
@@ -49,7 +49,7 @@ public final class TransferEventSupport {
      *
      * @param listener
      *            the transfer listener
-     * @return <code>true<code>
+     * @return <code>true</code>
      *         if given listener was added to the collection of listeners
      *         <code>false</code> otherwise
      * @see com.reversecoder.git.api.events.TransferEvent
